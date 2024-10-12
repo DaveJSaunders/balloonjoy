@@ -16,21 +16,39 @@
             color: #333;
         }
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
+            gap: 20px;
+            max-width: 100%;
+            margin: 0 auto;
         }
         .gallery img {
-            width: 100%;
+            max-width: 100%;
+            width: auto;
             height: auto;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+        @media (min-width: 481px) {
+            .gallery img {
+                max-width: calc(50% - 10px);
+            }
+        }
+        @media (min-width: 769px) {
+            .gallery img {
+                max-width: calc(33.333% - 14px);
+            }
+        }
+        @media (min-width: 1025px) {
+            .gallery img {
+                max-width: calc(100vw - 40px);  /* 40px accounts for body padding */
+            }
+        }
         @media (max-width: 480px) {
-            .gallery {
-                grid-template-columns: 1fr;
+            .gallery img {
+                width: 100%;
             }
         }
     </style>
