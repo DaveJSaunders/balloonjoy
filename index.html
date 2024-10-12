@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balloons Bring Joy Photoshoot</title>
+    <title>Balloons Bring Joy Gallery</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,40 +16,27 @@
             color: #333;
         }
         .gallery {
-            column-count: 5;
-            column-gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            justify-content: center;
         }
         .gallery img {
             width: 100%;
             height: auto;
-            margin-bottom: 10px;
+            object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        @media (max-width: 1200px) {
+        @media (max-width: 480px) {
             .gallery {
-                column-count: 4;
-            }
-        }
-        @media (max-width: 1000px) {
-            .gallery {
-                column-count: 3;
-            }
-        }
-        @media (max-width: 800px) {
-            .gallery {
-                column-count: 2;
-            }
-        }
-        @media (max-width: 400px) {
-            .gallery {
-                column-count: 1;
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <h1>Balloons Bring Joy Photoshoot</h1>
+    <h1>Balloons Bring Joy!</h1>
     <div class="gallery">
         <img src="image1.png" alt="Happy boy with balloons">
         <img src="image2.png" alt="Smiling girl with Happy Birthday balloon">
